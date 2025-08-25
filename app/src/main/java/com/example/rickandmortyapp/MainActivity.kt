@@ -1,7 +1,6 @@
 package com.example.rickandmortyapp
 
 import android.os.Bundle
-import android.text.Layout.Alignment
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -11,6 +10,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
@@ -26,20 +26,15 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.capitalize
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextIndent
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.lifecycle.ViewModelProvider
 import coil3.compose.AsyncImage
-import com.example.rickandmortyapp.domain.entity.CharacterEntity
-import com.example.rickandmortyapp.domain.entity.CharactersResult
-import com.example.rickandmortyapp.ui.characters.CharactersViewModel
+import com.example.shared.domain.entity.CharacterEntity
+import com.example.shared.domain.entity.CharactersResult
+import com.example.shared.presentation.CharactersViewModel
 import com.example.rickandmortyapp.ui.theme.RickAndMortyAppTheme
+import com.example.shared.Greetings
 
 class MainActivity : ComponentActivity() {
 
@@ -67,7 +62,13 @@ fun CharactersScreen(viewModel: CharactersViewModel) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Rick and Morty - Characteres") }
+                title = {
+                    Column {
+                        Text("Rick and Morty - Characteres")
+                        Spacer(modifier = Modifier.height(4.dp))
+                        Text("Platform: ${Greetings().greet()}", style = MaterialTheme.typography.bodySmall)
+                    }
+                }
             )
         }
     ) { contentPadings ->
@@ -96,7 +97,6 @@ fun CharactersList(
     LazyColumn(
         modifier = modifier
     ) {
-
         items(items) { character ->
             ElevatedCard(
                 modifier = Modifier

@@ -49,21 +49,11 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-
-    // pasar a commonMain
-    implementation(libs.ktor.client.core)
-    implementation(libs.kotlinx.coroutines.core)
-    implementation(libs.ktor.client.content.negotiation)
-    implementation(libs.ktor.serialization.kotlinx.json)
-    // pasar a androidMain
-    implementation(libs.ktor.client.okhttp)
-    // for iosMain
-    //implementation(libs.ktor.client.darwin)
-
-    // mantener aqui
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.coil.compose)
     implementation(libs.coil.network)
+
+    implementation(project(":shared"))
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
