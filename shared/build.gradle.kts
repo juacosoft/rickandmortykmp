@@ -73,6 +73,9 @@ kotlin {
         commonTest {
             dependencies {
                 implementation(libs.kotlin.test)
+                implementation(libs.kotlin.test.anotations)
+                implementation(libs.kotlin.test.corountines)
+                implementation(libs.ktor.client.mock)
             }
         }
 
