@@ -15,10 +15,10 @@ class FakeCharactersRepository: CharactersRepository {
     }
 
     override suspend fun fetchCharacters(): CharactersResult {
-        if (shouldReturnError) {
-            return CharactersResult.Error("Test error")
+        return if (shouldReturnError) {
+            CharactersResult.Error("Test error")
         } else {
-            return CharactersResult.Success(characters?: getCharacters())
+            CharactersResult.Success(characters?: getCharacters())
         }
     }
 
