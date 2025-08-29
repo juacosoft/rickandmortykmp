@@ -55,6 +55,9 @@ dependencies {
 
     implementation(project(":shared"))
 
+    implementation(platform(libs.koin.boom))
+    implementation(libs.koin.android)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

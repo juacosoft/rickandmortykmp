@@ -66,7 +66,11 @@ kotlin {
                 implementation(libs.ktor.client.content.negotiation)
                 implementation(libs.ktor.serialization.kotlinx.json)
                 implementation(libs.kotlin.lifecycle.viewmodel)
-                // Add KMP dependencies here
+                // Koin
+                implementation(project.dependencies.platform(libs.koin.boom))
+                implementation(libs.koin.core)
+                implementation(libs.koin.compose)
+                implementation(libs.koin.compose.viewmodel)
             }
         }
 
@@ -76,6 +80,7 @@ kotlin {
                 implementation(libs.kotlin.test.anotations)
                 implementation(libs.kotlin.test.corountines)
                 implementation(libs.ktor.client.mock)
+                implementation(libs.koin.test)
             }
         }
 
@@ -83,6 +88,7 @@ kotlin {
             dependencies {
                 implementation(libs.ktor.client.okhttp)
                 implementation(libs.androidx.lifecycle.viewmodel)
+                implementation(libs.koin.android)
                 // Add Android-specific dependencies here. Note that this source set depends on
                 // commonMain by default and will correctly pull the Android artifacts of any KMP
                 // dependencies declared in commonMain.

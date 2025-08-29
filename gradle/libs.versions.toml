@@ -20,6 +20,7 @@ core = "1.5.0"
 lifecycleViewmodel = "2.8.2"
 commonviewModel = "2.9.2"
 skieVersion = "0.10.6"
+koinVersion = "4.1.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -36,12 +37,23 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+# Ktor
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor_version" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor_version" }
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor_version" }
 ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor_version" }
 ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor_version" }
 ktor-client-mock = { module = "io.ktor:ktor-client-mock", version.ref = "ktor_version" }
+# Koin
+koin-boom = { module = "io.insert-koin:koin-bom", version.ref = "koinVersion" }
+koin-core = { module = "io.insert-koin:koin-core" }
+koin-android = { group = "io.insert-koin", name = "koin-android" }
+koin-compose = { group = "io.insert-koin", name = "koin-compose", version.ref = "koinVersion"}
+koin-compose-viewmodel = { group = "io.insert-koin", name = "koin-compose-viewmodel", version.ref = "koinVersion"}
+# Koin test
+koin-test = { group = "io.insert-koin", name = "koin-test", version.ref = "koinVersion"}
+koin-test-junit4 = { group = "io.insert-koin", name = "koin-test-junit4", version.ref = "koinVersion"}
+
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
 coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coilVersion" }

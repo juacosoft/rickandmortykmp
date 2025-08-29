@@ -35,12 +35,11 @@ import com.example.shared.domain.entity.CharactersResult
 import com.example.shared.presentation.CharactersViewModel
 import com.example.rickandmortyapp.ui.theme.RickAndMortyAppTheme
 import com.example.shared.Greetings
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : ComponentActivity() {
 
-    private val charactersViewModel : CharactersViewModel by lazy {
-        ViewModelProvider(this).get(CharactersViewModel::class.java)
-    }
+    private val charactersViewModel : CharactersViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

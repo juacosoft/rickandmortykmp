@@ -6,9 +6,14 @@
 //
 
 import SwiftUI
+import SharedKit
 
 @main
 struct RickAndMortyIosIosApp: App {
+    
+    init() {
+        HelperKt.doInitKoin()
+    }
     var body: some Scene {
         WindowGroup {
             CharacterListScreen()
